@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const useInView = (options) => {
+interface InViewOptions {
+  selector: string;
+  [key: string]: any; // Add additional properties if needed
+}
+
+const useInView = (options: InViewOptions) => {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {

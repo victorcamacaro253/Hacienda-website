@@ -2,9 +2,10 @@ import BreedCarousel from './BreedCarousel';
 import img1 from '../../assets/images/cow1.jpg';
 import img2 from '../../assets/images/cow2.jpg';
 import img3 from '../../assets/images/cow3.jpg';
-import img4 from '../../assets/images/cow4.jpg';
-import img5 from '../../assets/images/cow.jpg';
 import { useNavigate } from 'react-router-dom';
+//import img4 from '../../assets/images/cow4.jpg';
+//import img5 from '../../assets/images/cow.jpg';
+//import { useNavigate } from 'react-router-dom';
 
  const breeds = [
   {

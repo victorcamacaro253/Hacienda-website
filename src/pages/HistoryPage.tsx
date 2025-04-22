@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import img10 from '../../assets/images/img10.jpg';
 import img11 from '../../assets/images/img11.webp';
 import img12 from '../../assets/images/img12.webp';
 import img13 from '../../assets/images/img13.webp';
 import useInView from '../hooks/useView';
 import Modal from '../components/Modal';
+import { useState } from 'react';
 
 const timelineData = [
   { year: "1920", event: "Farm Founded", description: `En lo profundo de las colinas verdes que rodean el pintoresco pueblo de San José de las Rosas, se encuentra la Hacienda Villa Blanca. Desde hace más de un siglo, esta hacienda ha sido el corazón de la familia Ramírez.`, icon: "🌱" },
@@ -15,11 +15,11 @@ const timelineData = [
 
 const HistoryPage = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const isTimelineInView = useInView({ selector: '.timeline-section' });
   const isGalleryInView = useInView({ selector: '.gallery-section' });
 
-  const handleImageClick = (imageSrc) => {
+  const handleImageClick = (imageSrc: string) => {
     setSelectedImage(imageSrc);
     setModalOpen(true);
   };
@@ -86,7 +86,7 @@ const HistoryPage = () => {
       </section>
 
       {/* Modal */}
-      <Modal isOpen={isModalOpen} onClose={closeModal} imageSrc={selectedImage} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} imageSrc={selectedImage || ''} />
     </div>
   );
 };

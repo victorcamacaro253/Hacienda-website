@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Modal = ({ isOpen, onClose, imageSrc }) => {
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  imageSrc: string;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, imageSrc }) => {
   if (!isOpen) return null;
 
   return (

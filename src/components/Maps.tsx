@@ -3,24 +3,39 @@ import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 're
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 import 'leaflet-routing-machine';
+
+// Extend Leaflet's namespace to include Routing
+declare module 'leaflet' {
+  namespace Routing {
+    function control(options: any): any;
+  }
+}
 import 'leaflet-control-geocoder';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css';
+
+// Extend Leaflet's Control type to include geocoder
+declare module 'leaflet' {
+  namespace Control {
+    function geocoder(options?: any): any;
+  }
+}
 import '../css/MapStyle.css'; // still needed for Leaflet controls
 
 const MapWithShops = () => {
-  const shopLocations = [
-    { id: 1, name: "Shop A", position: [51.505, -0.09] },
-    { id: 2, name: "Shop B", position: [51.51, -0.1] },
-    { id: 3, name: "Farmatodo", position: [10.169680018772281, -70.07715225219728], imageUrl: 'https://picsum.photos/seed/picsum/200/300' }
+  const shopLocations: { id: number; name: string; position: L.LatLngTuple; imageUrl?: string }[] = [
+      { id: 1, name: "Shop A", position: [51.505, -0.09] },
+      { id: 2, name: "Shop B", position: [51.51, -0.1] },
+      { id: 3, name: "Farmatodo", position: [10.169680018772281, -70.07715225219728], imageUrl: 'https://picsum.photos/seed/picsum/200/300' }
   ];
 
-  const startPoint = [10.0634, -69.3122]; // Barquisimeto
-  const endPoint = [10.4806, -66.9036]; // Caracas
+  const startPoint: L.LatLngTuple = [10.0634, -69.3122]; // Barquisimeto
+  const endPoint: L.LatLngTuple = [10.4806, -66.9036]; // Caracas
 
   const MapWithSearch = () => {
     const map = useMap();
 
     useEffect(() => {
-      const geocoder = L.Control.Geocoder.nominatim();
+      const geocoder = (L.Control as any).Geocoder.nominatim();
       const geocoderControl = L.Control.geocoder({
         geocoder,
         position: 'topleft',
@@ -29,7 +44,7 @@ const MapWithShops = () => {
       return () => {
         map.removeControl(geocoderControl);
       };
-    }, [map]);
+    }, [map]); // Added map as dependency
 
     return null;
   };
@@ -45,36 +60,40 @@ const MapWithShops = () => {
     });
 
     useEffect(() => {
-      if (map) {
-        const routingControl = L.Routing.control({
-          lineOptions: {
-            styles: [{ color: '#6FA1EC', opacity: 0.7, weight: 5 }]
-          },
-          waypoints: [L.latLng(startPoint), L.latLng(endPoint)],
-          routeWhileDragging: true,
-          position: 'bottomright',
-          collapsible: true,
-          autoRoute: true,
-          show: false,
-        }).addTo(map);
+      if (!map) return;
 
-        const toggleButton = L.control({ position: 'topright' });
-        toggleButton.onAdd = function () {
+      const routingControl = L.Routing.control({
+        lineOptions: {
+          styles: [{ color: '#6FA1EC', opacity: 0.7, weight: 5 }]
+        },
+        waypoints: [L.latLng(startPoint), L.latLng(endPoint)],
+        routeWhileDragging: true,
+        position: 'bottomright',
+        collapsible: true,
+        autoRoute: true,
+        show: false,
+      }).addTo(map);
+
+      const ToggleButton = L.Control.extend({
+        options: { position: 'topright' },
+        onAdd: function () {
           const div = L.DomUtil.create('div', 'toggle-button');
           div.innerHTML = '<button>Toggle Route</button>';
           div.onclick = function () {
             routingControl.toggle();
           };
           return div;
-        };
-        toggleButton.addTo(map);
+        },
+      });
 
-        return () => {
-          map.removeControl(routingControl);
-          map.removeControl(toggleButton);
-        };
-      }
-    }, [map]);
+      const toggleButton = new ToggleButton();
+      map.addControl(toggleButton);
+
+      return () => {
+        map.removeControl(routingControl);
+        map.removeControl(toggleButton);
+      };
+    }, [map, startPoint, endPoint]); // Added dependencies
 
     return null;
   };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight } from 'lucide-react'; // Optional: For icons
 
 const PartnersPage = () => {

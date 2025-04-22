@@ -1,9 +1,16 @@
-import React from 'react';
 import img1 from '../../assets/images/dicaprio.webp';
 import img2 from '../../assets/images/messi.jpg';
 import img3 from '../../assets/images/selenagomez.webp';
 
-const TestimonialCard = ({ testimonial }) => {
+interface Testimonial {
+  image: string;
+  name: string;
+  role: string;
+  content: string;
+  rating: number;
+}
+
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <article
       className="bg-white border border-[#ff7f50] rounded-2xl p-8 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-2xl hover:border-green-700 relative overflow-hidden group"

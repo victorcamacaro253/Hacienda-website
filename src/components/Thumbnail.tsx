@@ -1,4 +1,16 @@
-const Thumbnail = ({ items, currentIndex }) => {
+interface ThumbnailItem {
+    thumbnail?: string;
+    img: string;
+    title?: string;
+    description?: string;
+}
+
+interface ThumbnailProps {
+    items: ThumbnailItem[];
+    currentIndex: number;
+}
+
+const Thumbnail: React.FC<ThumbnailProps> = ({ items, currentIndex }) => {
     return (
         <div className="absolute bottom-[50px] left-1/2 -translate-x-[15%] z-30 flex gap-5">
             {items.map((item, index) => (

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,7 +28,7 @@ const ImageCarousel = () => {
   ];
 
   useEffect(() => {
-    let interval;
+    let interval: ReturnType<typeof setInterval>;
     if (isAutoPlaying) {
       interval = setInterval(() => {
         setCurrentIndex((prevIndex) =>
@@ -53,7 +53,7 @@ const ImageCarousel = () => {
     setIsAutoPlaying(false);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: SetStateAction<number>) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false);
   };

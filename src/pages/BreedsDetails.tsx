@@ -169,10 +169,11 @@ const breeds = [
 
 const BreedsDetails = () => {
   const navigate = useNavigate();
-  const [selectedAnimal, setSelectedAnimal] = useState(null);
-  const [expandedBreed, setExpandedBreed] = useState(null);
+  const [selectedAnimal, setSelectedAnimal] = useState<string | null>(null);
+  //const [expandedBreed, setExpandedBreed] = useState(null);
+  const [expandedBreed] = useState(null);
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string | number | Date) => {
     return new Date(dateString).toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
@@ -210,7 +211,7 @@ const BreedsDetails = () => {
               {/* Breed summary (always visible) */}
               <div 
                 className="p-6 cursor-pointer flex flex-col md:flex-row items-start md:items-center gap-6"
-                onClick={() => toggleBreedExpansion(index)}
+              /* onClick={() => toggleBreedExpansion(index)} */
               >
                 <div className="w-full md:w-1/3 lg:w-1/4 h-48 md:h-40 rounded-lg overflow-hidden">
                   <img
@@ -356,14 +357,16 @@ const BreedsDetails = () => {
                               </tr>
                               {selectedAnimal === animal.id && (
                                 <tr className="bg-green-50">
-                                  <td colSpan="6" className="px-4 py-4">
+                                  <td colSpan={6} className="px-4 py-4">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                       {/* Additional Details Grid */}
                                       <div className="flex items-start">
                                         <Calendar className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Fecha de Nacimiento</h4>
-                                          <p className="text-xs text-gray-700">{formatDate(animal.birthdate)}</p>
+                                          {'birthdate' in animal && (
+                                            <p className="text-xs text-gray-700">{formatDate(animal.birthdate)}</p>
+                                          )}
                                         </div>
                                       </div>
                                       <div className="flex items-start">

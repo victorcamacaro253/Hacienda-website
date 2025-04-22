@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const BreedCarousel = ({ images }) => {
+interface BreedCarouselProps {
+  images: string[];
+}
+
+const BreedCarousel = ({ images }: BreedCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {

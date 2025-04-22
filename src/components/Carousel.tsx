@@ -4,12 +4,12 @@ import img1 from '../../assets/images/img6.webp';
 import img2 from '../../assets/images/img7.webp';
 import img3 from '../../assets/images/img8.png';
 import img4 from '../../assets/images/img9.png';
-import Thumbnail from './thumbnail';
+import Thumbnail from './Thumbnail';
 
 const Carousel = () => {
-    const nextRef = useRef(null);
-    const prevRef = useRef(null);
-    const carouselRef = useRef(null);
+    const nextRef = useRef<HTMLButtonElement>(null);
+    const prevRef = useRef<HTMLButtonElement>(null);
+    const carouselRef = useRef<HTMLDivElement>(null);
     const timeRunning = 3000;
     const timeAutoNext = 7000;
 
@@ -57,21 +57,29 @@ const Carousel = () => {
         const prevButton = prevRef.current;
         const carousel = carouselRef.current;
 
-        const showSlider = (type) => {
+        const showSlider = (type: 'next' | 'prev') => {
             if (type === 'next') {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
             } else {
                 setCurrentIndex((prevIndex) => (prevIndex - 1 + carouselItems.length) % carouselItems.length);
             }
 
-            carousel.classList.add(type);
+            if (carousel) {
+                carousel.classList.add(type);
+            }
             setTimeout(() => {
-                carousel.classList.remove(type);
+                if (carousel) {
+                    carousel.classList.remove(type);
+                }
             }, timeRunning);
         };
 
-        nextButton.onclick = () => showSlider('next');
-        prevButton.onclick = () => showSlider('prev');
+        if (nextButton) {
+            nextButton.onclick = () => showSlider('next');
+        }
+        if (prevButton) {
+            prevButton.onclick = () => showSlider('prev');
+        }
 
         const autoNext = setInterval(() => {
             showSlider('next');
