@@ -47,9 +47,10 @@ const BlogSection = () => {
     return (
         <section className="py-16 bg-gray-100">
             <div className="max-w-screen-2xl mx-auto px-4"> {/* Increased max-width */}
-                <h2 className="text-4xl font-bold text-center text-gray-800 relative mb-5">
+                <h2 className="text-6xl font-extrabold text-center text-[#f1683a] mb-8 relative">
                     Últimas Noticias
-                    <span className="block h-1 w-20 bg-gradient-to-r from-green-300 to-emerald-600 rounded mx-auto mt-2" />
+                  <span className="absolute bottom-[-0.75rem] left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-[#f07a52] to-[#ec7c3b] rounded"></span>
+
                 </h2>
                 <p className="text-lg text-center text-gray-700 mb-12">
                     Mantente al día con todo lo que sucede en Hacienda Villa Blanca. Conoce nuestros eventos, nuevos productos y más.

@@ -6,6 +6,7 @@ import logo from '../../assets/images/img5.1.png';
 const Header = () => {
   const { isDarkBackground } = useHeaderStyle();
   const [scrolled, setScrolled] = useState(false);
+   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,12 +38,13 @@ const Header = () => {
         {/* Enhanced Navigation */}
         <nav className="hidden md:flex items-center space-x-6 ml-auto">
           {[
-            { path: "/", name: "Home" },
-            { path: "/contact", name: "Contacto" },
-            { path: "/info", name: "Info" },
-            { path: "/history", name: "Nuestra Historia" },
-            { path: "/intranet", name: "Intranet" }
-          ].map((item) => (
+                { path: "/", name: "Inicio" },
+                { path: "/about", name: "Nuestra Finca" },
+                { path: "/products", name: "Productos" },
+                { path: "/tours", name: "Tours" },
+                { path: "/history", name: "Historia" },
+                { path: "/contact", name: "Contacto" }
+              ].map((item) => (
             <Link
               key={item.path}
               to={item.path}
@@ -59,27 +61,64 @@ const Header = () => {
 
         {/* Improved Mobile Menu */}
         <div className="md:hidden ml-auto">
-          <button 
-            className="p-2 rounded-md hover:bg-white/10 transition-colors"
-            aria-label="Menu"
-          >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            
+            <button 
+              className="p-2 rounded-md hover:bg-white/10 transition-colors"
+              aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                />
+              </svg>
+            </button>
         </div>
       </div>
+
+
+       
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 bg-black/90 z-40 pt-40 px-6">
+              <button
+              className="absolute top-6 right-6 text-white text-4xl z-50 hover:text-orange-300 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Cerrar menú"
+            >
+              &times;
+            </button>
+            <nav className="flex flex-col space-y-6 text-center">
+              {[
+                { path: "/", name: "Inicio" },
+                { path: "/about", name: "Nuestra Finca" },
+                { path: "/products", name: "Productos" },
+                { path: "/tours", name: "Tours" },
+                { path: "/history", name: "Historia" },
+                { path: "/contact", name: "Contacto" }
+              ].map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-2xl text-white py-3 hover:text-orange-300 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+
     </header>
   );
 };

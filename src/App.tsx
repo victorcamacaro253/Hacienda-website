@@ -7,6 +7,7 @@ import BreedsDetails from './pages/BreedsDetails';
 import Footer from './components/Footer'; // Import the Footer component
 import HomePage from './pages/HomePage';
 import PartnersPage from './pages/Partnerships';
+import ContactPage from './pages/ContactPage';
 
 const App = () => {
   
@@ -27,6 +28,8 @@ const App = () => {
        <Route path='/breeds' element={<BreedsDetails/>} />
 
        <Route path="/partners" element={<PartnersPage />} />
+       
+       <Route path="/contact" element={<ContactPage />} />
 
 
       </Routes>

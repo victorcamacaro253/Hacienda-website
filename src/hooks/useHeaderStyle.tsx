@@ -6,7 +6,7 @@ const useHeaderStyle = () => {
   const location = useLocation();
 
   // Define the pages that require custom styles for the header
-  const darkBackgroundPages = [ '/about', '/contact'];  // Add all pages with light backgrounds here
+  const darkBackgroundPages = [ '/about', '/contacto'];  // Add all pages with light backgrounds here
 
   // Check if current path is in the darkBackgroundPages array
   const isDarkBackground = darkBackgroundPages.includes(location.pathname);

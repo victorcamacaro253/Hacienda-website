@@ -1,34 +1,45 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-interface InViewOptions {
-  selector: string;
-  [key: string]: any; // Add additional properties if needed
+interface IntersectionOptions extends IntersectionObserverInit {
+  triggerOnce?: boolean;
 }
 
-const useInView = (options: InViewOptions) => {
+const useInView = (options: IntersectionOptions = {}) => {
   const [isInView, setIsInView] = useState(false);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
+      ([entry]) => {
+        // Update state only when entering view
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          // Unobserve if triggerOnce is true
+          if (options.triggerOnce) {
+            observer.unobserve(element);
           }
-        });
+        } else if (!options.triggerOnce) {
+          setIsInView(false);
+        }
       },
-      { ...options, threshold: 0.5 } // Customize the threshold if needed
+      {
+        threshold: options.threshold || 0.1,
+        root: options.root || null,
+        rootMargin: options.rootMargin || '0px'
+      }
     );
 
-    const element = document.querySelector(options.selector);
-    if (element) {
-      observer.observe(element);
-    }
+    observer.observe(element);
 
-    return () => observer.disconnect();
-  }, [options.selector]);
+    return () => {
+      observer.unobserve(element);
+    };
+  }, [options.threshold, options.root, options.rootMargin, options.triggerOnce]);
 
-  return isInView;
+  return [ref, isInView] as const;
 };
 
 export default useInView;
