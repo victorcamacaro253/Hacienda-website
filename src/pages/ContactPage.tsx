@@ -153,11 +153,11 @@ const ContactPage = () => {
           {/* Contact Information */}
           <div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-8 border border-green-200 mb-8">
-              <h2 className="text-3xl font-bold text-green-600 mb-6">Información de Contacto</h2>
+              <h2 className="text-3xl font-bold text-orange-600 mb-6">Información de Contacto</h2>
               
               <div className="space-y-5">
                 <div className="flex items-start">
-                  <div className="text-green-500 mt-1 mr-4">
+                  <div className="text-orange-500 mt-1 mr-4">
                     <FaMapMarkerAlt size={20} />
                   </div>
                   <div>
@@ -167,7 +167,7 @@ const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-green-500 mt-1 mr-4">
+                  <div className="text-orange-500 mt-1 mr-4">
                     <FaPhone size={20} />
                   </div>
                   <div>
@@ -178,7 +178,7 @@ const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-green-500 mt-1 mr-4">
+                  <div className="text-orange-500 mt-1 mr-4">
                     <FaEnvelope size={20} />
                   </div>
                   <div>
@@ -189,7 +189,7 @@ const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-green-500 mt-1 mr-4">
+                  <div className="text-orange-500 mt-1 mr-4">
                     <FaClock size={20} />
                   </div>
                   <div>

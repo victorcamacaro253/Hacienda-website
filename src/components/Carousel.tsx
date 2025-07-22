@@ -14,6 +14,15 @@ const Carousel = () => {
     const timeAutoNext = 7000;
 
     const carouselItems = [
+         {
+            img: img3,
+            thumbnail: img3,
+            title: 'Una vida dedicada a la ganadería',
+            author: 'TRADICIÓN FAMILIAR',
+            topic: 'HISTORIA',
+            description: 'Conoce nuestra trayectoria y valores',
+            path: '/history'
+        },
         {
             img: img1,
             thumbnail: img1,
@@ -30,15 +39,7 @@ const Carousel = () => {
             description: 'Cultivos orgánicos de la más alta calidad',
             path: '/agriculture'
         },
-        {
-            img: img3,
-            thumbnail: img3,
-            title: 'Una vida dedicada a la ganadería',
-            author: 'TRADICIÓN FAMILIAR',
-            topic: 'HISTORIA',
-            description: 'Conoce nuestra trayectoria y valores',
-            path: '/history'
-        },
+       
         {
             img: img4,
             thumbnail: img4,

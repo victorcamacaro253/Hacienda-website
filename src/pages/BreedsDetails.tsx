@@ -193,7 +193,7 @@ const BreedsDetails = () => {
         <div className="mb-12">
           <button
             onClick={() => navigate('/')}
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200 shadow-sm"
+            className="inline-flex items-center px-4 py-2 bg-orange-500 text-white text-lg rounded hover:bg-white hover:text-orange-500 border-2 border-orange-500 transition-all duration-300 hover:-translate-y-0.5"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Volver al inicio
@@ -223,7 +223,7 @@ const BreedsDetails = () => {
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">{breed.name}</h2>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-200 text-orange-700">
                       {breed.availableAnimals.length} disponibles
                     </span>
                   </div>
@@ -232,7 +232,7 @@ const BreedsDetails = () => {
                     {breed.characteristics.map((characteristic, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium"
+                        className="px-3 py-1 bg-orange-200 text-orange-700 rounded-full text-xs font-medium"
                       >
                         {characteristic}
                       </span>
@@ -252,17 +252,17 @@ const BreedsDetails = () => {
       
                 <div className="px-6 pb-6 border-t border-gray-100">
                   <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="bg-green-50 p-4 rounded-lg">
+                    <div className="bg-orange-50 p-4 rounded-lg">
                       <div className="flex items-center mb-3">
-                        <MapPin className="h-5 w-5 text-green-600 mr-2" />
+                        <MapPin className="h-5 w-5 text-orange-600 mr-2" />
                         <h3 className="font-semibold text-gray-900">Origen</h3>
                       </div>
                       <p className="text-gray-700">{breed.details?.origin || 'Origen no disponible'}</p>
                     </div>
 
-                    <div className="bg-green-50 p-4 rounded-lg">
+                    <div className="bg-orange-50 p-4 rounded-lg">
                       <div className="flex items-center mb-3">
-                        <Scale className="h-5 w-5 text-green-600 mr-2" />
+                        <Scale className="h-5 w-5 text-orange-600 mr-2" />
                         <h3 className="font-semibold text-gray-900">Peso Promedio</h3>
                       </div>
                       <p className="text-gray-700">
@@ -271,29 +271,29 @@ const BreedsDetails = () => {
                       </p>
                     </div>
 
-                    <div className="bg-green-50 p-4 rounded-lg">
+                    <div className="bg-orange-50 p-4 rounded-lg">
                       <div className="flex items-center mb-3">
-                        <Target className="h-5 w-5 text-green-600 mr-2" />
+                        <Target className="h-5 w-5 text-orange-600 mr-2" />
                         <h3 className="font-semibold text-gray-900">Usos Principales</h3>
                       </div>
                       <div className="flex flex-wrap gap-1">
                         {breed.details.uses.map((use, i) => (
-                          <span key={i} className="px-2 py-1 bg-white text-green-700 rounded text-xs font-medium">
+                          <span key={i} className="px-2 py-1 bg-white text-orange-700 rounded text-xs font-medium">
                             {use}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    <div className="bg-green-50 p-4 rounded-lg">
+                    <div className="bg-orange-50 p-4 rounded-lg">
                       <div className="flex items-center mb-3">
-                        <Award className="h-5 w-5 text-green-600 mr-2" />
+                        <Award className="h-5 w-5 text-orange-600 mr-2" />
                         <h3 className="font-semibold text-gray-900">Ventajas</h3>
                       </div>
                       <ul className="space-y-1 text-gray-700">
                         {breed.details.advantages.map((advantage, i) => (
                           <li key={i} className="flex items-start">
-                            <span className="text-green-500 mr-1">•</span>
+                            <span className="text-orange-500 mr-1">•</span>
                             {advantage}
                           </li>
                         ))}
@@ -304,7 +304,7 @@ const BreedsDetails = () => {
                   {/* Animals table */}
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                      <Tag className="h-5 w-5 text-green-600 mr-2" />
+                      <Tag className="h-5 w-5 text-orange-600 mr-2" />
                       Animales Disponibles
                     </h3>
                     
@@ -323,7 +323,7 @@ const BreedsDetails = () => {
                         <tbody className="bg-white divide-y divide-gray-200">
                           {breed.availableAnimals.map((animal, i) => (
                             <React.Fragment key={i}>
-                              <tr className={`hover:bg-gray-50 ${selectedAnimal === animal.id ? 'bg-green-50' : ''}`}>
+                              <tr className={`hover:bg-gray-50 ${selectedAnimal === animal.id ? 'bg-orange-50' : ''}`}>
                                 <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{animal.id}</td>
                                 <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                                   <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
@@ -334,14 +334,14 @@ const BreedsDetails = () => {
                                 </td>
                                 <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">{animal.age}</td>
                                 <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">{animal.weight}</td>
-                                <td className="px-4 py-4 whitespace-nowrap text-sm font-semibold text-green-600">{animal.price}</td>
+                                <td className="px-4 py-4 whitespace-nowrap text-sm font-semibold text-orange-600">{animal.price}</td>
                                 <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                                   <button
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       setSelectedAnimal(selectedAnimal === animal.id ? null : animal.id);
                                     }}
-                                    className="inline-flex items-center px-3 py-1 border border-transparent text-xs font-medium rounded-full text-green-700 bg-green-100 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200"
+                                    className="inline-flex items-center px-3 py-1 border border-transparent text-xs font-medium rounded-full text-orange-700 bg-orange-100 hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
                                   >
                                     {selectedAnimal === animal.id ? (
                                       <>
@@ -356,12 +356,12 @@ const BreedsDetails = () => {
                                 </td>
                               </tr>
                               {selectedAnimal === animal.id && (
-                                <tr className="bg-green-50">
+                                <tr className="bg-orange-50">
                                   <td colSpan={6} className="px-4 py-4">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                       {/* Additional Details Grid */}
                                       <div className="flex items-start">
-                                        <Calendar className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Calendar className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Fecha de Nacimiento</h4>
                                           {'birthdate' in animal && (
@@ -370,7 +370,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <Users className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Users className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Padres</h4>
                                           <p className="text-xs text-gray-700">
@@ -384,7 +384,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <Syringe className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Syringe className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Vacunación</h4>
                                           {'vaccination' in animal && (
@@ -393,7 +393,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <Certificate className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Certificate className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Certificación Genética</h4>
                                           {'geneticCertification' in animal && (
@@ -402,7 +402,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <MapPinned className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <MapPinned className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Ubicación</h4>
                                           {'location' in animal && (
@@ -411,7 +411,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <Utensils className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Utensils className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Alimentación</h4>
                                           {'feedingProgram' in animal && (
@@ -420,7 +420,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <Heart className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Heart className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Salud</h4>
                                           {'health' in animal && (
@@ -429,7 +429,7 @@ const BreedsDetails = () => {
                                         </div>
                                       </div>
                                       <div className="flex items-start">
-                                        <Stethoscope className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                        <Stethoscope className="h-4 w-4 text-orange-600 mr-2 mt-0.5 flex-shrink-0" />
                                         <div>
                                           <h4 className="text-xs font-medium text-gray-900">Último Chequeo</h4>
                                           {'lastCheckup' in animal && (

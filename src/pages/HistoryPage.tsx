@@ -9,7 +9,7 @@ import { useState } from 'react';
 const timelineData = [
   { 
     year: "1920", 
-    event: "Farm Founded", 
+    event: "Granja fundada", 
     description: `En lo profundo de las colinas verdes que rodean el pintoresco pueblo de San José de las Rosas, se encuentra la Hacienda Villa Blanca. Desde hace más de un siglo, esta hacienda ha sido el corazón de la familia Ramírez. Fundada por Don Carlos Ramírez y su esposa María, la finca comenzó como un modesto terreno donde cultivaban maíz y frijoles para sustentar a su familia. Con el tiempo, la visión de Don Carlos transformó estas tierras en un próspero centro agrícola que abastecía a toda la región.`,
     longDescription: `La Hacienda Villa Blanca nació de un sueño y mucho trabajo duro. Don Carlos Ramírez, un inmigrante español con conocimientos agrícolas, se estableció en estas tierras fértiles junto a su joven familia. Los primeros años fueron difíciles, con cosechas modestas y condiciones climáticas desafiantes. Sin embargo, la dedicación de la familia y su conexión con la tierra eventualmente dieron frutos. Para 1925, la hacienda ya contaba con su primera cosecha comercial de café, marcando el comienzo de lo que sería una tradición familiar por generaciones.`,
     icon: "🌱",
@@ -17,7 +17,7 @@ const timelineData = [
   },
   { 
     year: "1950", 
-    event: "First Barn Built", 
+    event: "Primer granero construido", 
     description: `La construcción del granero principal marcó un hito en la historia de la hacienda. Este icónico edificio, hecho de madera de roble local, se convirtió en el centro de operaciones de la finca. No solo almacenaba herramientas y cosechas, sino que también servía como lugar de reunión para los trabajadores y sus familias.`,
     longDescription: `El granero de 1950 fue una obra maestra de la carpintería tradicional. Construido completamente a mano por artesanos locales bajo la supervisión de Don Carlos Ramírez Jr., incorporó técnicas de construcción traídas de España pero adaptadas al clima tropical. Sus gruesas paredes de madera protegían las cosechas de la humedad, mientras que su diseño de ventilación natural mantenía una temperatura ideal. En los años siguientes, el granero sería testigo de innumerables celebraciones de cosecha, bodas de trabajadores, y hasta serviría como escuela improvisada para los niños de la comunidad durante los años difíciles.`,
     icon: "🏚️",
@@ -25,7 +25,7 @@ const timelineData = [
   },
   { 
     year: "1990", 
-    event: "Modernization", 
+    event: "Modernización", 
     description: `La década de los 90 trajo una revolución tecnológica a la hacienda. Bajo el liderazgo de la tercera generación de los Ramírez, se implementaron sistemas de riego por goteo, tractores modernos y técnicas de cultivo sostenible. Esta modernización permitió triplicar la producción mientras se reducía el impacto ambiental.`,
     longDescription: `La modernización de 1990 no fue solo acerca de máquinas nuevas, sino de una nueva filosofía agrícola. La familia Ramírez, ahora dirigida por Carlos Ramírez III, un ingeniero agrónomo educado en Europa, implementó un enfoque holístico. Introdujeron rotación de cultivos para preservar el suelo, sistemas de compostaje para reducir desechos, y comenzaron la transición hacia la agricultura orgánica. Este período también vio la primera exportación de café de especialidad de la hacienda a mercados internacionales, colocando a Villa Blanca en el mapa global de productores de café de alta calidad.`,
     icon: "🚜",
@@ -33,7 +33,7 @@ const timelineData = [
   },
   { 
     year: "2020", 
-    event: "Farm Tours & Ecotourism", 
+    event: "Visitas a granjas y ecoturismo", 
     description: `En el centenario de la hacienda, abrimos nuestras puertas al público con recorridos educativos. Los visitantes pueden experimentar de primera mano la rica historia de la finca, aprender sobre procesos agrícolas sostenibles y disfrutar de la belleza natural que nos rodea.`,
     longDescription: `El programa de ecoturismo de 2020 fue el resultado de años de planificación. Más que simples recorridos, ofrecemos experiencias inmersivas: desde la recolección de café "de la mata a la taza", hasta talleres de agricultura sostenible para niños y adultos. La hacienda también estableció alianzas con universidades locales para programas de investigación agrícola. Este nuevo capítulo honra el legado de los fundadores mientras mira hacia el futuro, creando conexiones significativas entre la tierra, los alimentos y las personas que los disfrutan. Cada tour incluye una visita al museo familiar, donde artefactos y fotografías cuentan la historia completa de estos cien años de dedicación a la tierra.`,
     icon: "👨‍🌾",

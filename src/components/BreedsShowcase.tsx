@@ -1,9 +1,19 @@
 import BreedCarousel from './BreedCarousel';
-import img1 from '../../assets/images/cow1.jpg';
-import img2 from '../../assets/images/cow2.jpg';
-import img3 from '../../assets/images/cow3.jpg';
+import angus from '../../assets/images/angus.webp';
+import angus1 from '../../assets/images/angus1.jpg';
+import angus2 from '../../assets/images/angus2.jpg';
+import brahman from '../../assets/images/brahman.jpg';
+import brahman1 from '../../assets/images/brahman.webp';
+import brahman2 from '../../assets/images/brahman1.webp';
+import holstein from '../../assets/images/holstein.jpg';
+import holstein1 from '../../assets/images/holstein1.jpg';    
+import holstein2 from '../../assets/images/Holstein.jpeg';
+import hereford from '../../assets/images/hereford.jpg';
+import hereford1 from '../../assets/images/hereford1.jpg';
+import hereford2 from '../../assets/images/hereford2.jpg';
 import { useNavigate } from 'react-router-dom';
-//import img4 from '../../assets/images/cow4.jpg';
+
+
 //import img5 from '../../assets/images/cow.jpg';
 //import { useNavigate } from 'react-router-dom';
 
@@ -13,37 +23,28 @@ import { useNavigate } from 'react-router-dom';
     description: "Conocida por su resistencia al calor y adaptabilidad. Excelente para producción de carne en climas tropicales.",
     image: "https://images.unsplash.com/photo-1584935385440-1c5a59c0803b?auto=format&fit=crop&q=80&w=1920",
     characteristics: ["Resistente al calor", "Alta adaptabilidad", "Excelente ganancia de peso"],
-    carouselImages: [img1, img2, img3]
+    carouselImages: [brahman, brahman1,brahman2]
   },
   {
     name: "Angus",
     description: "Raza premium para carne, conocida por su marmoleo excepcional y rápido crecimiento.",
     image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&q=80&w=1920",
     characteristics: ["Carne premium", "Rápido crecimiento", "Excelente marmoleo"],
-    carouselImages: [
-      "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&q=80&w=1920",
-      "https://images.unsplash.com/photo-1548667348-5bcd92d0b72b?auto=format&fit=crop&q=80&w=1920"
-    ]
+    carouselImages: [angus, angus1, angus2]
   },
   {
     name: "Holstein",
     description: "La raza lechera más productiva del mundo, conocida por su alta producción de leche.",
     image: "https://images.unsplash.com/photo-1597734816317-2026d4824292?auto=format&fit=crop&q=80&w=1920",
     characteristics: ["Alta producción", "Dócil", "Adaptable"],
-    carouselImages: [
-      "https://images.unsplash.com/photo-1597734816317-2026d4824292?auto=format&fit=crop&q=80&w=1920",
-      "https://images.unsplash.com/photo-1562564013-cf67f287abec?auto=format&fit=crop&q=80&w=1920"
-    ]
+    carouselImages: [holstein2, holstein1, holstein]
   },
   {
     name: "Hereford",
     description: "Excelente para la producción de carne, conocida por su eficiencia alimenticia y temperamento dócil.",
     image: "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?auto=format&fit=crop&q=80&w=1920",
     characteristics: ["Eficiente", "Dócil", "Rústica"],
-    carouselImages: [
-      "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7?auto=format&fit=crop&q=80&w=1920",
-      "https://images.unsplash.com/photo-1602127477198-1a5b6c13da0e?auto=format&fit=crop&q=80&w=1920"
-    ]
+    carouselImages: [hereford, hereford1, hereford2]
   }
 ];
 
