@@ -1,6 +1,7 @@
 import img1 from '../../assets/images/fiesta-cosecha.jpg';
 import img2 from '../../assets/images/ganaderia-sostenible.jpg';
 import img3 from '../../assets/images/DIA-LACTEA.jpg';
+import img4 from '../../assets/images/talleres.jpg';
 
 const BlogSection = () => {
     const blogPosts = [
@@ -33,7 +34,7 @@ const BlogSection = () => {
         },
         {
             id: 4,
-            image: img2,
+            image: img4,
             alt: "Taller de Agricultura Sostenible",
             title: "Taller de Agricultura Sostenible en Hacienda Villa Blanca",
             date: "Publicado el 10 de Abril, 2025",
@@ -84,7 +85,7 @@ const BlogSection = () => {
                         href="/blog"
                         className="inline-block px-6 py-3 bg-orange-500 text-white text-lg rounded hover:bg-white hover:text-orange-500 border-2 border-orange-500 transition-all duration-300 hover:-translate-y-0.5"
                     >
-                        Ver más artículos
+                        Ver más artículos   
                     </a>
                 </div>
             </div>

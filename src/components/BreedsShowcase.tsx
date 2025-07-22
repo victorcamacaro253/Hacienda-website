@@ -56,13 +56,16 @@ const BreedsShowcase = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-sm uppercase text-gray-500">Nuestras Razas</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Excelencia en Genética Bovina</h2>
+          <h2 className="text-6xl font-extrabold text-center text-[#f1683a] mb-8 relative">Excelencia en Genética Bovina
+
+              <span className="absolute bottom-[-0.75rem] left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-[#f07a52] to-[#ec7c3b] rounded"></span>
+          </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             Criamos y seleccionamos las mejores razas de ganado, garantizando calidad superior y adaptabilidad a diferentes entornos.
           </p>
           <button
             onClick={() => navigate('/breeds')}
-            className="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+            className="mt-6 px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-white  hover:bg-orange-400   transition"
           >
             Ver todas las razas
           </button>
@@ -81,7 +84,7 @@ const BreedsShowcase = () => {
                   {breed.characteristics.map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full"
+                      className="bg-orange-200 text-orange-700 text-sm font-medium px-3 py-1 rounded-full"
                     >
                       {char}
                     </span>
