@@ -5,7 +5,7 @@ import angus2 from '../../assets/images/angus2.jpg';
 import brahman from '../../assets/images/brahman.jpg';
 import brahman1 from '../../assets/images/brahman.webp';
 import brahman2 from '../../assets/images/brahman1.webp';
-import holstein from '../../assets/images/holstein.jpg';
+import holstein from '../../assets/images/Holstein.jpg';
 import holstein1 from '../../assets/images/holstein1.jpg';    
 import holstein2 from '../../assets/images/Holstein.jpeg';
 import hereford from '../../assets/images/hereford.jpg';
