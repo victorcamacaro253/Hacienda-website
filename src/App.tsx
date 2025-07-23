@@ -8,6 +8,7 @@ import Footer from './components/Footer'; // Import the Footer component
 import HomePage from './pages/HomePage';
 import PartnersPage from './pages/Partnerships';
 import ContactPage from './pages/ContactPage';
+import ToursPage from './pages/tourPage';
 
 const App = () => {
   
@@ -30,6 +31,8 @@ const App = () => {
        <Route path="/partners" element={<PartnersPage />} />
        
        <Route path="/contact" element={<ContactPage />} />
+
+       <Route path="/tours" element={<ToursPage />} />
 
 
       </Routes>
