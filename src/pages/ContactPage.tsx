@@ -39,21 +39,23 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-800"> {/* ✅ Fixed class syntax */}
+    <div className="min-h-screen  bg-white text-gray-800"> {/* ✅ Fixed class syntax */}
       {/* Hero Section */}
-      <section className="relative h-80 sm:h-96 w-full overflow-hidden">
+      <section className="relative  h-80 sm:h-96 w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-0"></div>
         <img
           src={farmImage}
           alt="Hacienda Villa Blanca"
           className="w-full h-full object-cover brightness-75"
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-6 z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3">Contáctenos</h1>
-          <p className="text-lg sm:text-xl max-w-xl">
-            Estamos aquí para responder sus preguntas sobre nuestros productos, tours y más
-          </p>
-        </div>
+       <div className="absolute inset-0 flex flex-col md:justify-center justify-end items-center text-white text-center px-6 pb-10 md:pb-0 z-10">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3">
+    Contáctenos
+  </h1>
+  <p className="text-lg sm:text-xl max-w-xl">
+    Estamos aquí para responder sus preguntas sobre nuestros productos, tours y más
+  </p>
+</div>
       </section>
 
       {/* Main Content */}
