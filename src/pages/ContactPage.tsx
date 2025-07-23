@@ -39,7 +39,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-white text-gray-800"> {/* ✅ Fixed class syntax */}
+   <div className="min-h-screen bg-gradient-to-br from-[#f8af5b] via-[#eef1f1] to-[#fddbbb] text-gray-800">
       {/* Hero Section */}
       <section className="relative  h-80 sm:h-96 w-full overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-0"></div>
@@ -59,7 +59,7 @@ const ContactPage = () => {
       </section>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div className="max-w-7xl  mx-auto  px-4 sm:px-6 py-10 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Form */}
           <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-xl p-6 sm:p-8 border border-orange-200">
