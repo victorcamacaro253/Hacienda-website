@@ -26,14 +26,17 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto mt-1 px-6 md:px-12 h-full flex items-center justify-between">
         
-        {/* Logo with better centering */}
-        <div className="absolute left-1/4 mt-2 transform -translate-x-1/2">
-          <img 
-            src={logo} 
-            alt="Logo" 
-            className="w-40 h-auto transition-transform duration-300 hover:scale-105" 
+        <Link
+          to="/"
+          className="absolute left-1/4 mt-2 transform -translate-x-1/2 z-20"
+          aria-label="Volver al inicio"
+        >
+          <img
+            src={logo}
+            alt="Logo Hacienda Villa Blanca"
+            className="w-40 h-auto transition-transform duration-300 hover:scale-105"
           />
-        </div>
+        </Link>
 
         {/* Enhanced Navigation */}
         <nav className="hidden md:flex items-center space-x-6 ml-auto">

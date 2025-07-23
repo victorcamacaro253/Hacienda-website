@@ -37,7 +37,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         {/* Testimonial Text */}
         <p
           id={`testimonial-${testimonial.name}`}
-          className="text-gray-800 text-lg mb-4 leading-relaxed transition-colors duration-300 group-hover:text-green-700"
+          className="text-gray-800 text-lg mb-4 leading-relaxed transition-colors duration-300 group-hover:text-orange-700"
         >
           {testimonial.content}
         </p>
@@ -76,22 +76,22 @@ const TestimonialsSection = () => {
     {
       image: img1,
       name: 'Leonardo DiCaprio',
-      role: 'Environmental Advocate',
-      content: 'Their sustainable practices are revolutionizing modern agriculture!',
+      role: 'Defensor del medio ambiente',
+      content: '¡Sus prácticas sostenibles están revolucionando la agricultura moderna!',
       rating: 5,
     },
     {
       image: img2,
       name: 'Lionel Messi',
-      role: 'Sports Nutrition Partner',
-      content: 'The quality of their organic produce keeps our athletes at peak performance.',
+      role: 'Socio de nutrición deportiva',
+      content: 'La calidad de sus productos orgánicos mantiene a nuestros atletas en el máximo rendimiento.',
       rating: 4,
     },
     {
       image: img3,
       name: 'Selena Gomez',
-      role: 'Wellness Ambassador',
-      content: 'Their farm-to-table approach aligns perfectly with my health philosophy.',
+      role: 'Embajadora de bienestar',
+      content: 'Su enfoque de la granja a la mesa se alinea perfectamente con mi filosofía de salud.',
       rating: 5,
     },
   ];
@@ -105,11 +105,11 @@ const TestimonialsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#f1683a] relative inline-block">
-            What Our Farmers Say
+       Lo que dicen nuestros agricultores
             <span className="block w-16 h-1 bg-[#f1683a] absolute left-1/2 -bottom-2 transform -translate-x-1/2"></span>
           </h2>
           <p className="text-gray-700 text-lg max-w-xl mx-auto mt-4">
-            Discover what our farming community has to say about their experiences with us.
+          Descubra lo que nuestra comunidad agrícola tiene que decir sobre sus experiencias con nosotros.
           </p>
         </div>
 
